@@ -1,0 +1,382 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+.companions-page {
+  min-height: 100vh;
+  background: #fafaf7;
+  color: #102b3f;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.companions-page * {
+  box-sizing: border-box;
+}
+
+.companions-nav {
+  height: 92px;
+  padding: 0 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafaf7;
+  border-bottom: 1px solid #e1e9eb;
+}
+
+.companions-brand {
+  font-size: 29px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+
+.companions-brand span {
+  color: #578995;
+}
+
+.companions-back {
+  background: transparent;
+  border: 1px solid #b9cdd2;
+  border-radius: 40px;
+  padding: 14px 23px;
+  color: #102b3f;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  transition: 0.25s;
+}
+
+.companions-back:hover {
+  background: #e6eef0;
+}
+
+.companions-hero {
+  background: #102b3f;
+  color: #fafaf7;
+  padding: 100px 9% 105px;
+}
+
+.companions-eyebrow {
+  display: block;
+  color: #679eac;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+}
+
+.companions-hero .companions-eyebrow {
+  color: #a0c6ce;
+}
+
+.companions-hero h1 {
+  margin: 35px 0 22px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: clamp(48px, 6.5vw, 94px);
+  line-height: 1.18;
+  letter-spacing: -2px;
+}
+
+.companions-hero h1 em {
+  color: #a0c6ce;
+  font-weight: 400;
+}
+
+.companions-hero > p {
+  max-width: 470px;
+  color: #d2e1e6;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.companions-service {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 36px;
+  padding: 18px 25px;
+  border: 1px solid #537180;
+  color: #a0c6ce;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.companions-service strong {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.companions-content {
+  padding: 100px 9% 130px;
+}
+
+.companions-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 45px;
+}
+
+.companions-heading h2 {
+  margin: 22px 0 0;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: clamp(35px, 4vw, 58px);
+}
+
+.companions-heading h2 em {
+  color: #578995;
+  font-weight: 400;
+}
+
+.companions-heading > p {
+  color: #6b8390;
+  font-size: 14px;
+}
+
+.companions-filters {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 45px;
+}
+
+.companions-filters input,
+.companions-filters select {
+  width: 100%;
+  min-width: 0;
+  padding: 18px 20px;
+  border: 1px solid #d4e0e3;
+  border-radius: 0;
+  outline: none;
+  background: #fff;
+  color: #102b3f;
+  font: inherit;
+  font-size: 13px;
+}
+
+.companions-filters input:focus,
+.companions-filters select:focus {
+  border-color: #578995;
+}
+
+.companions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.companion-card {
+  min-width: 0;
+  background: #fff;
+  border: 1px solid #dfe8ea;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.companion-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(16, 43, 63, 0.07);
+}
+
+.companion-photo {
+  position: relative;
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.companion-photo > span {
+  font-family: 'Playfair Display', serif;
+  font-size: 78px;
+  font-weight: 400;
+  color: #578995;
+  opacity: 0.7;
+}
+
+.companion-verified {
+  position: absolute;
+  bottom: 20px;
+  left: 22px;
+  padding: 10px 14px;
+  background: #fafaf7;
+  color: #1b5362;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.companion-details {
+  padding: 30px;
+}
+
+.companion-rating {
+  color: #407a88;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.companion-rating span {
+  margin-left: 8px;
+  color: #82949c;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.companion-details h3 {
+  margin: 17px 0 5px;
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.companion-age {
+  margin: 0;
+  color: #578995;
+  font-size: 13px;
+}
+
+.companion-description {
+  min-height: 74px;
+  margin: 23px 0;
+  color: #637d89;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.companion-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.companion-tags span {
+  padding: 9px 13px;
+  background: #eaf1f2;
+  color: #356878;
+  font-size: 11px;
+}
+
+.companion-languages {
+  margin: 22px 0;
+  color: #6b8390;
+  font-size: 12px;
+}
+
+.companion-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding-top: 22px;
+  border-top: 1px solid #e4ebed;
+}
+
+.companion-price strong {
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.companion-price span {
+  color: #718995;
+  font-size: 12px;
+}
+
+.companion-card-bottom button {
+  padding: 15px 22px;
+  background: #102b3f;
+  border: 1px solid #102b3f;
+  border-radius: 40px;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  transition: 0.25s;
+}
+
+.companion-card-bottom button:hover {
+  background: #1b5362;
+}
+
+.companions-empty {
+  padding: 50px 20px;
+  text-align: center;
+  color: #637d89;
+}
+
+.companions-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 45px 9%;
+  background: #102b3f;
+  color: #c2d7dc;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+.companions-footer strong {
+  color: #fff;
+  font-size: 25px;
+  letter-spacing: -1px;
+}
+
+@media (max-width: 800px) {
+  .companions-nav {
+    height: 76px;
+    padding: 0 6%;
+  }
+
+  .companions-hero {
+    padding: 75px 7%;
+  }
+
+  .companions-hero h1 {
+    letter-spacing: -1px;
+  }
+
+  .companions-content {
+    padding: 75px 6%;
+  }
+
+  .companions-heading {
+    display: block;
+  }
+
+  .companions-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .companions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .companions-footer {
+    flex-wrap: wrap;
+    padding: 35px 6%;
+  }
+}
+
+@media (max-width: 420px) {
+  .companions-brand {
+    font-size: 24px;
+  }
+
+  .companions-back {
+    padding: 12px 15px;
+    font-size: 11px;
+  }
+
+  .companion-details {
+    padding: 23px;
+  }
+
+  .companion-details h3 {
+    font-size: 28px;
+  }
+
+  .companion-card-bottom button {
+    padding: 13px 16px;
+  }
+}

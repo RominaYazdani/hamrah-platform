@@ -1,0 +1,17 @@
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #102b3f;
+  background: #fafaf7;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
