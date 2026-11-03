@@ -17,6 +17,9 @@ export type Companion = {
   image: string
 }
 
+// Correct image paths for local development and GitHub Pages
+const imageBase = import.meta.env.BASE_URL
+
 const companions: Companion[] = [
   {
     id: 1,
@@ -31,7 +34,7 @@ const companions: Companion[] = [
       'A warm listener who loves meaningful conversations and discovering little joys in everyday life.',
     initials: 'EW',
     color: '#DCE9E9',
-    image: '/companions/emma.jpg',
+    image: `${imageBase}companions/emma.jpg`,
   },
   {
     id: 2,
@@ -46,7 +49,7 @@ const companions: Companion[] = [
       'Friendly, patient, and always happy to share a walk, a good conversation, or a new experience.',
     initials: 'DC',
     color: '#E6E9E3',
-    image: '/companions/daniel.jpg',
+    image: `${imageBase}companions/daniel.jpg`,
   },
   {
     id: 3,
@@ -61,7 +64,7 @@ const companions: Companion[] = [
       'Curious and thoughtful, with a passion for learning, culture, and making people feel comfortable.',
     initials: 'SB',
     color: '#EAE5E1',
-    image: '/companions/sophia.jpg',
+    image: `${imageBase}companions/sophia.jpg`,
   },
   {
     id: 4,
@@ -76,7 +79,7 @@ const companions: Companion[] = [
       'Easygoing and dependable, bringing calm energy to appointments, outings, and everyday plans.',
     initials: 'OJ',
     color: '#E0E9ED',
-    image: '/companions/oliver.jpg',
+    image: `${imageBase}companions/oliver.jpg`,
   },
 ]
 
@@ -186,15 +189,10 @@ function Companions({
   onSelect,
 }: CompanionsProps) {
   const [search, setSearch] = useState('')
-  const [language, setLanguage] =
-    useState('All languages')
+  const [language, setLanguage] = useState('All languages')
   const [sort, setSort] = useState('Recommended')
-
-  const [selectedIds, setSelectedIds] =
-    useState<number[]>([])
-
-  const [showComparison, setShowComparison] =
-    useState(false)
+  const [selectedIds, setSelectedIds] = useState<number[]>([])
+  const [showComparison, setShowComparison] = useState(false)
 
   const filtered = useMemo(() => {
     const query = search.toLowerCase().trim()
@@ -225,9 +223,7 @@ function Companions({
   }, [search, language, sort])
 
   const selectedCompanions = selectedIds
-    .map((id) =>
-      companions.find((companion) => companion.id === id)
-    )
+    .map((id) => companions.find((companion) => companion.id === id))
     .filter(
       (companion): companion is Companion =>
         companion !== undefined
@@ -341,9 +337,7 @@ function Companions({
             </h2>
           </div>
 
-          <p>
-            {filtered.length} demo companions
-          </p>
+          <p>{filtered.length} demo companions</p>
         </div>
 
         <div className="companions-filters">
@@ -399,7 +393,10 @@ function Companions({
           <div>
             <span
               className="companions-eyebrow"
-              style={{ display: 'block', marginBottom: 7 }}
+              style={{
+                display: 'block',
+                marginBottom: 7,
+              }}
             >
               FIND YOUR BEST MATCH
             </span>
@@ -422,8 +419,8 @@ function Companions({
                 color: muted,
               }}
             >
-              Select two profiles to compare
-              their rates, interests and languages.
+              Select two profiles to compare their
+              rates, interests and languages.
             </p>
           </div>
 
@@ -494,8 +491,7 @@ function Companions({
               selectedIds.includes(companion.id)
 
             const isLimitReached =
-              selectedIds.length === 2 &&
-              !isSelected
+              selectedIds.length === 2 && !isSelected
 
             return (
               <article
@@ -505,7 +501,9 @@ function Companions({
                   outline: isSelected
                     ? `2px solid ${petrol}`
                     : undefined,
-                  outlineOffset: isSelected ? -2 : undefined,
+                  outlineOffset: isSelected
+                    ? -2
+                    : undefined,
                 }}
               >
                 <CompanionPortrait
@@ -648,7 +646,8 @@ function Companions({
                     style={{
                       fontFamily:
                         "'Playfair Display', serif",
-                      fontSize: 'clamp(26px, 3vw, 38px)',
+                      fontSize:
+                        'clamp(26px, 3vw, 38px)',
                       fontWeight: 500,
                       color: navy,
                       margin: '12px 0 0',
@@ -716,7 +715,8 @@ function Companions({
                             scope="col"
                             style={{
                               width: '39%',
-                              padding: '16px 18px 24px',
+                              padding:
+                                '16px 18px 24px',
                               textAlign: 'left',
                               verticalAlign: 'top',
                               background: '#E6EEF0',
